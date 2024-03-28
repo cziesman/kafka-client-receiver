@@ -82,6 +82,12 @@ This command will run an S2I build on Openshift to compile the code, build a JAR
 
 Once the application is running, it can be tested by using the *kafka-client-sender* application.
 
+This project also deploys a simple web GUI that can be found at
+
+    http://client-receiver-kafka-client-receiver.apps.cluster-2cl6w.dynamic.redhatworkshops.io/web/list
+
+Replace the first part of the URL with the address of your OCP server.
+
 ### Local Deployment
 
 The demo client application is deployed locally using the following command:
@@ -89,5 +95,10 @@ The demo client application is deployed locally using the following command:
     mvn clean spring-boot:run
 
 This command will compile the code, build a JAR file, and run the JAR file.
+
+
+When run locally, this project also deploys a simple web GUI that can be found at
+
+    http://localhost:9090/web/list
 
 Once the application is running, it can be tested by using the *kafka-client-sender* application.
