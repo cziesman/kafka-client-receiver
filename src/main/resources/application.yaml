@@ -1,0 +1,35 @@
+kafka:
+  bootstrap-servers: my-cluster-kafka-bootstrap-kafka.apps.cluster-2cl6w.dynamic.redhatworkshops.io:443
+  topic:
+    name: my-topic
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 9090
+
+spring:
+  kafka:
+    bootstrap-servers: my-cluster-kafka-bootstrap-kafka.apps.cluster-2cl6w.dynamic.redhatworkshops.io:443
+    properties:
+      ssl:
+        truststore:
+          location: src/main/resources/certs/truststore.p12
+          password: WRQ3H6r4WxsI
+          type: PKCS12
+        keystore:
+          location: src/main/resources/certs/keystore.p12
+          password: AMgDu4wWYS6FokeAjTNkD5Ka0C82Tynp
+          type: PKCS12
+      security:
+        protocol: SSL
+
+logging:
+  level:
+    root: INFO
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M:%line - %msg%n"
